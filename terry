@@ -1,0 +1,13 @@
+CREATE TABLE foreigners(id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(30) NOT NULL,
+email VARCHAR(60) NOT NULL,
+gender VARCHAR(60) NOT NULL,
+status VARCHAR(60) NOT NULL,
+PRIMARY KEY(id));
+
+INSERT INTO foreigners (name, email, gender,status) VALUES ('Acy Brown', 'acy@ff.gq', 'female', 'active');
+
+INSERT INTO foreigners (name, email, gender,status) VALUES ('Barack Obama', 'barack@pres.us', 'male', 'active');
+
+INSERT INTO foreigners (name, email, gender,status)
+VALUES ('Nelson Mandela', 'nelo@free.sa', 'male', 'inactive');

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: foreigners-node-deployment 
+spec: 
+  selector: 
+    matchLabels: 
+      app: foreigners-node
+  replicas: 2 
+  template: 
+    metadata: 
+      labels: 
+        app: foreigners-node
+    spec: 
+      containers: 
+      - name: foreigners-node 
+        image: terrykariuki/foreigners-node
+        ports: 
+        - containerPort: 80
+--- 
+kind: Service 
+apiVersion: v1 
+metadata: 
+  name: foreigners-node-service 
+spec: 
+  selector: 
+    app: foreigners-node
+  ports: 
+  - protocol: TCP 
+    port: 80
+    targetPort: 80
+    nodePort: 30000
+  type: NodePort 
